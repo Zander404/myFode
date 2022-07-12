@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/7636/7636421.png">
+<link rel="stylesheet" type="text/css" href="static/formulario/css/style.css">
+<html>
+
+  <head>
+    <div id = topo>
+     
+    </div>
+
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body background color ="https://img.freepik.com/vetores-gratis/ilustracao-dos-desenhos-animados-do-cofre-de-banco-porta-segura-do-ferro-metalico_1441-1915.jpg?t=st=1650806118~exp=1650806718~hmac=d95feddc9a8d27914ed329051c19d7c45b239ad9f8efc7ab1b0dbea020b3728d&w=1060">
+    
+    {% block body %}
+
+    {% if messages %}
+    <div>
+      <strong>Messages:</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div>
+      <strong>Menu:</strong>
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+        {% else %}
+        <li><a href="{% url 'account_login' %}">Sign In</a></li>
+        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+  </body>
+</html>
