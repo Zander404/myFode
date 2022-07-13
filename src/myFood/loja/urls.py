@@ -33,7 +33,6 @@ urlpatterns = [
     path('cart/', views.cart, name='cart'),
 
     path('search/', views.search, name='search'),
-
     
     #
     # # Profile
