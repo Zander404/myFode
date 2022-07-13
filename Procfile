@@ -1,0 +1,1 @@
+web: gunicorn myFood.wsgi.application -b 0.0.0.0:$PORT
