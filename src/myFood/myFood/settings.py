@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'myFood.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-          "default": {
+   "default": {
     "ENGINE": "django.db.backends.postgresql",
      "NAME": "postgres",
      "USER": "postgres",
@@ -91,6 +91,7 @@ DATABASES = {
      "HOST": "db",
      "PORT": 5432,
  }
+
 }
 
 
