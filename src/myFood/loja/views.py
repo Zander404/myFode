@@ -17,6 +17,7 @@ def category_list(request):
 def marca_list(request):
     data = Category.objects.all().order_by('-id')
     return render(request, 'marca_list.html', {'data': data})
+    
 
 @login_required
 def cart(request):
